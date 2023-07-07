@@ -105,13 +105,13 @@
   when:
     - sshd_disable_crypto_policy | bool
 
-- name: disable SSH server CRYPTO_POLICY
-  copy:
-    src: sshd
-    dest: /etc/sysconfig/sshd
-    owner: 'root'
-    group: 'root'
-    mode: '0640'
-  when:
-    - sshd_disable_crypto_policy | bool
-    - ('crypto-policies' in ansible_facts.packages)
+# - name: disable SSH server CRYPTO_POLICY
+#   copy:
+#     src: sshd
+#     dest: /etc/sysconfig/sshd
+#     owner: 'root'
+#     group: 'root'
+#     mode: '0640'
+#   when:
+#     - sshd_disable_crypto_policy | bool
+#     - ('crypto-policies' in ansible_facts.packages)
